@@ -1,0 +1,13 @@
+---
+interface Props {
+    elements: any[]
+}
+
+const { elements } = Astro.props
+---
+
+<ul class="list-item mb-4">
+   {elements.map(e => <li class="text-base text-gray-700 dark:text-slate-400 pl-4 leading-7 border-l border-slate-200 dark:border-slate-700 dark:hover:border-slate-500 hover:border-slate-400">
+    {e}
+   </li>)}
+</ul>

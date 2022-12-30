@@ -1,0 +1,39 @@
+---
+import Facebook from "../Icons/Facebook.astro";
+import Instragram from "../Icons/Instragram.astro";
+import Twitter from "../Icons/Twitter.astro";
+import { SITE_TITLE } from '../../config'
+const today = new Date();
+---
+
+<div
+	id="social-media"
+	class="py-6 px-4 bg-gray-100 dark:bg-dark-terciary md:flex md:items-center md:justify-between"
+>
+	<span class="text-sm text-muted dark:text-gray-300 sm:text-center"
+		>© <time>{today.getFullYear()}</time> <a href="/">{SITE_TITLE}™</a>. Todos los derechos reservados.
+	</span>
+	<div class="flex mt-4 space-x-6 sm:justify-center md:mt-0">
+		<a
+			href="#"
+			class="text-gray-400 hover:text-gray-900 dark:hover:text-white"
+		>
+            <Facebook/>
+			<span class="sr-only">Facebook page</span>
+		</a>
+		<a
+			href="#"
+			class="text-gray-400 hover:text-gray-900 dark:hover:text-white"
+		>
+            <Instragram/>
+			<span class="sr-only">Instagram page</span>
+		</a>
+		<a
+			href="#"
+			class="text-gray-400 hover:text-gray-900 dark:hover:text-white"
+		>
+            <Twitter/>
+			<span class="sr-only">Twitter page</span>
+		</a>
+	</div>
+</div>

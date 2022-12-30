@@ -1,0 +1,343 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Testimonials from "../components/Testimonials/index";
+import Otter from "../components/Home/Otter";
+---
+
+<MainLayout>
+	<div id="main-bg" class="global-bg">
+		<section
+			id="init"
+			class="max-w-screen-xl mx-auto py-36 px-4"
+		>
+			<h1
+				class="text-slate-800 font-extrabold font-roboto text-3xl sm:text-5xl lg:text-6xl tracking-tight text-center dark:text-white blink antialiased"
+				id="type-trigger"
+			>
+				Lavamos tus muebles a <span class="blink"></span>
+			</h1>
+			<p
+				class="block text-center text-muted dark:text-dark-muted lg:text-xl my-8 animate__animated animate__fadeInLeft"
+			>
+				Un servicio ofrecido de forma distinta de máxima calidad gracias
+				a nuestras potentes máquinas especializadas, porque queremos
+				hacer la diferencia.
+			</p>
+			<div
+				class="flex items-center justify-center gap-5 text-sm sm:text-base"
+			>
+				<button
+					class="bg-secondary hover:bg-green-500 dark:bg-green-500 dark:hover:bg-green-600 text-white px-5 py-4 rounded-md shadow-md font-semibold animate__animated animate__fadeInLeftBig ring-1 ring-slate-900/5"
+					>Servicios</button
+				>
+				<a
+					href="/contact"
+					class="bg-primary hover:bg-blue-600 text-white px-5 py-4 rounded-md shadow-md font-semibold animate__animated animate__fadeInRightBig ring-1 ring-slate-900/5"
+					>Contáctanos</a
+				>
+			</div>
+			<div
+				class="flex flex-col xl:flex-row items-center justify-center my-8 md:my-10 lg:my-20 animate__animated animate__fadeInUpBig"
+			>
+				<figure
+					class="xl:order-first order-last flex flex-col md:flex-row max-w-fit bg-white dark:bg-dark-secondary rounded-md overflow-hidden shadow-md -mt-8 xl:-mr-8 z-10 w-[500px] ring-1 ring-slate-900/5 max-md:items-center max-md:justify-center hover:scale-105 transition-transform"
+				>
+					<img
+						class="max-md:w-[100px] max-md:h-[100px] md:w-[45%] max-md:mt-5 max-md:rounded-full"
+						src="/jpg/person2.jpg"
+						alt="Happy person image"
+					/>
+					<figcaption
+						class="p-4 md:p-8 font-medium text-base sm:text-lg"
+					>
+						<blockquote
+							class="text-slate-900 dark:text-gray-300 mb-4 q"
+						>
+							"Cuando invito de fiesta a mis amigos, ya no les
+							incomoda sentarse en mis muebles."
+						</blockquote>
+						<div class="text-sm sm:text-base">
+							<p class="text-green-500">Andrés Felipe</p>
+							<p class="text-muted">Estudiante, Ibagué Tolima</p>
+						</div>
+					</figcaption>
+				</figure>
+
+				<video
+					class="object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-500 cursor-pointer ring-1 ring-slate-900/5"
+					src="/video/home-video.mp4"
+					loop="true"
+					muted="true"
+					autoplay="true"></video>
+			</div>
+		</section>
+	</div>
+	<section
+		class="bg-white dark:bg-dark-primary border-t border-t-gray-200 dark:border-t-gray-600/50"
+		id="why-us"
+	>
+		<article class="container max-w-screen-xl mx-auto pt-20 lg:pt-36 px-4">
+			<h2
+				class="text-slate-800 font-extrabold font-roboto text-2xl sm:text-4xl lg:text-5xl tracking-tight text-center dark:text-white"
+				data-aos="fade-down"
+			>
+				Realmente <em>"lavando a mano"</em> no se puede.
+			</h2>
+			<blockquote
+				class="block text-center text-muted dark:text-dark-muted sm:text-base lg:text-xl my-8 w-4/6 mx-auto"
+				data-aos="fade-up"
+			>
+				Hemos estado experimentando en tratar de quitar manchas a mano<em
+					class="text-sky-500 font-medium"
+				>
+					de la manera tradicional</em
+				>, podríamos darte un montón de razones para no hacerlo, pero la
+				verdad es que no nos creeras hasta que pruebes nuestro servicio
+				donde usamos <em class="font-medium text-green-500"
+					>máquinas especializadas</em
+				>. Te preguntarás por qué no nos llamaste antes.
+			</blockquote>
+			<figure
+				class="flex items-center justify-center gap-4"
+				data-aos="fade-up"
+			>
+				<img
+					class="rounded-full overflow-hidden w-[70px] ring-1 ring-slate-900/5 shadow-md"
+					src="/jpg/sandra.jpg"
+					alt="Creator of Whouse"
+				/>
+				<figcaption>
+					<p
+						class="md:text-lg font-semibold text-slate-800 dark:text-white"
+					>
+						Sandra Patricia
+					</p>
+					<p class="text-sm text-muted dark:text-dark-muted mt-1">
+						Creadora de Whouse
+					</p>
+				</figcaption>
+			</figure>
+		</article>
+		<article
+			class="container bg-white dark:bg-dark-primary max-w-screen-xl mx-auto px-4 pb-20 lg:pb-36"
+			data-aos="zoom-in-up"
+		>
+			<Testimonials client:only />
+		</article>
+	</section>
+	<section
+		class="bg-gray-50 dark:bg-slate-900 border-t border-t-gray-200 dark:border-t-gray-600/50"
+		id="about-us"
+	>
+		<article class="container max-w-screen-xl mx-auto py-20 lg:py-36 px-8">
+			<div data-aos="zoom-in-up" data-aos-delay="300">
+				<div class="flex flex-col items-center gap-10 w-10/12 mx-auto">
+					<h1
+						class="text-center text-slate-800 font-extrabold font-roboto text-2xl sm:text-4xl lg:text-5xl tracking-tight dark:text-white order-2 lg:order-1"
+					>
+						Nos enfocamos en el cuidado.
+					</h1>
+					<Otter client:only />
+				</div>
+				<blockquote
+					class="block text-center text-muted dark:text-dark-muted sm:text-base lg:text-xl my-8 mx-auto pl-2 w-9/12"
+				>
+					Vimos la necesidad de las personas de poder limpiar sus
+					muebles de forma rápida sin la necesidad de <em
+						class="text-sky-500 font-medium"
+						>empaparlos y asolearlos</em
+					>, pero es muy difícil quitar las <em
+						class="text-green-500 font-medium">manchas</em
+					> y dejarlos como antes. Tomamos la iniciativa de probrar con
+					diferentes métodos y terminamos usando máquinas hechas y derechas
+					para este trabajo que <em
+						class="text-green-400 font-medium italic">solventan</em
+					> todos estos contras cuando son lavados tradicionalmente.
+				</blockquote>
+			</div>
+
+			<div
+				class="flex max-lg:flex-col items-center justify-center gap-6 max-lg:mx-auto py-10"
+			>
+				<div data-aos-delay="300" data-aos="zoom-in-right">
+					<figure
+						class="hover:scale-105 transition-transform bg-white dark:bg-dark-secondary rounded-md overflow-hidden shadow-md ring-1 ring-slate-900/5 max-w-sm"
+					>
+						<img
+							src="/jpg/mueble5.jpg"
+							alt="Imagen de limpieza de mueble"
+						/>
+						<figcaption class="p-4 md:p-5">
+							<h5
+								class="mb-4 font-bold tracking-tight text-lg sm:text-xl text-slate-900 dark:text-white"
+							>
+								Muebles casi secos
+							</h5>
+							<p
+								class="font-normal text-muted dark:text-dark-muted"
+							>
+								Nuestras máquinas devuelven casi toda el agua
+								que entra en la tela, de manera que no se
+								quedará estancada y dañe tus muebles.
+							</p>
+						</figcaption>
+					</figure>
+				</div>
+				<div data-aos-delay="300" data-aos="zoom-in-up">
+					<figure
+						class="transition-transform hover:scale-105 max-w-sm bg-white dark:bg-dark-secondary rounded-lg overflow-hidden shadow-md ring-1 ring-slate-900/5"
+					>
+						<img
+							src="/jpg/jabon2.jpg"
+							alt="Imagen de limpieza de mueble"
+						/>
+						<figcaption class="p-4 md:p-5">
+							<h5
+								class="mb-4 font-bold tracking-tight text-lg sm:text-xl text-slate-900 dark:text-white"
+							>
+								Sin rastros de jabón
+							</h5>
+							<p
+								class="font-normal text-muted dark:text-dark-muted"
+							>
+								El jabon que entra, es el mismo jabón que sale.
+								A lo largo del lavado te iremos mostrando toda
+								la suciedad que sacamos.
+							</p>
+						</figcaption>
+					</figure>
+				</div>
+				<div data-aos-delay="300" data-aos="zoom-in-up">
+					<figure
+						class="hover:scale-105 transition-transform max-w-sm bg-white dark:bg-dark-secondary rounded-md overflow-hidden shadow-md ring-1 ring-slate-900/5"
+					>
+						<img
+							src="/jpeg/mueble3.jpeg"
+							alt="Imagen de limpieza de mueble"
+						/>
+						<figcaption class="p-4 md:p-5">
+							<h5
+								class="mb-4 font-bold tracking-tight text-lg sm:text-xl text-slate-900 dark:text-white"
+							>
+								Desgaste nulo
+							</h5>
+							<p
+								class="font-normal text-muted dark:text-dark-muted"
+							>
+								Priorizamos en el cuidado, procuramos ejercer
+								las menos fuerzas posibles con el objetivo de no
+								desgastar las telas.
+							</p>
+						</figcaption>
+					</figure>
+				</div>
+			</div>
+		</article>
+	</section>
+	<section
+		class="dark:bg-dark-primary border-t border-t-gray-200 dark:border-t-gray-600/50 relative insight-bg"
+		id="insight-objective"
+	>
+		<article class="container max-w-screen-xl mx-auto py-20 lg:py-36 px-8">
+			<div data-aos="fade-up" data-aos-delay="400">
+				<h1
+					class="text-center font-extrabold font-roboto text-2xl sm:text-4xl lg:text-5xl tracking-tight dark:text-white order-2 lg:order-1"
+				>
+					<span
+						class="antialiased text-transparent bg-gradient-to-r from-green-300 to-sky-400 bg-clip-text"
+						>Misión y visión</span
+					>
+				</h1>
+				<blockquote
+					class="block text-center text-muted dark:text-dark-muted sm:text-base lg:text-xl my-8 mx-auto pl-2 w-9/12 blink"
+					id="insight-objective-text"
+				>
+				</blockquote>
+				<div class="flex justify-center items-center">
+					<a
+						href="/#init"
+						class="inline-flex gap-3 items-center rounded-md ring-1 ring-slate-900/5 shadow-md px-5 py-3 bg-gradient-to-r from-green-400 to-sky-400 hover:bg-gradient-to-l mx-auto text-white text-center text-sm font-semibold cursor-pointer pointer-events-auto"
+						><svg
+							class="w-6 h-6"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+							xmlns="http://www.w3.org/2000/svg"
+							><path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M9 11l3-3m0 0l3 3m-3-3v8m0-13a9 9 0 110 18 9 9 0 010-18z"
+							></path>
+						</svg>
+						Regresar
+					</a>
+				</div>
+			</div>
+		</article>
+		<span
+			class="pointer-events-none left-0 right-0 bottom-0 top-3/4 absolute bg-gradient-to-t from-white dark:from-dark-primary"
+		></span>
+	</section>
+</MainLayout>
+
+<script>
+	import { TypeAnimation } from "../scripts/Animations";
+
+	const titleTrigger = document.getElementById("type-trigger") as HTMLElement;
+	const titleAnimated = new TypeAnimation(
+		titleTrigger,
+		"domicilio de forma totalmente profesional"
+	);
+	titleAnimated.start({ mode: "type" })?.then(() => {
+		setTimeout(() => {
+			titleAnimated.charsToRemove = 22;
+			titleAnimated.start({ mode: "remove" })?.then(() => {
+				titleAnimated.setText(" totalmente");
+				setTimeout(() => {
+					titleAnimated.start({ mode: "type" })?.then(() => {
+						titleAnimated.setText(" profesional");
+						titleAnimated.start({ mode: "type" })?.then(() => {
+							titleAnimated.charsToRemove = 45;
+							setTimeout(() => {
+								titleAnimated
+									.start({
+										mode: "remove",
+									})
+									?.then(() => {
+										titleAnimated.setText(
+											" domicilio de forma totalmente profesional"
+										);
+										titleAnimated
+											.start({ mode: "type" })
+											?.then(() => {
+												titleTrigger.textContent += ".";
+											});
+									});
+							}, 2000);
+						});
+					});
+				}, 1500);
+			});
+		}, 3000);
+	});
+</script>
+<script>
+	import { TypeAnimation } from "../scripts/Animations";
+	const textTrigger = document.getElementById(
+		"insight-objective-text"
+	) as HTMLElement;
+	let text =
+		'Nuestra visión y objetivo principal es hacer una revolución en la forma en cómo se limpian los muebles en el país, ya que venimos acostumbrados a la limpieza "artesanal", que ciertamente no es la mejor opción. Por ello, decidimos innovar para ser los primeros en ofrecer estos servicios en nuestro país. Queremos que nuestros clientes salgan completamente satisfechos y no duden en volver a llamarnos; es por eso que nos enfocamos tanto en la calidad y servicio.';
+	const textAnimated = new TypeAnimation(textTrigger, text);
+	textAnimated.start({ mode: "type", speed: 50 });
+</script>
+<script>
+	import setTheme from "../scripts/Theme";
+	const mainTag = document.getElementById("main-bg") as HTMLElement;
+	const insightAndObjective = document.getElementById(
+		"insight-objective"
+	) as HTMLElement;
+	setTheme(mainTag, "global-bg", "global-bg-dark");
+	setTheme(insightAndObjective, "insight-bg", "insight-bg-dark");
+</script>

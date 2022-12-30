@@ -1,0 +1,16 @@
+---
+interface Props {
+	theme: string;
+}
+
+const { theme } = Astro.props;
+
+
+---
+
+<blockquote
+	class={`p-4 border-l-4  rounded-md mb-4 font-medium tracking-tight ` +
+		theme}
+>
+	<slot />
+</blockquote>

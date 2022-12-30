@@ -1,0 +1,22 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import CardList from "../components/Offers/CardList";
+---
+
+<MainLayout>
+	<div id="main-bg" class="bg-white min-h-screen relative">
+		<CardList/>
+		<span
+			class="pointer-events-none left-0 right-0 bottom-0 top-3/4 absolute bg-gradient-to-t from-white dark:from-dark-primary"
+		></span>
+	</div>
+</MainLayout>
+
+<script>
+	import setTheme from "../scripts/Theme";
+	setTheme(
+		document.getElementById("main-bg") as HTMLElement,
+		"insight-bg",
+		"insight-bg-dark"
+	);
+</script>

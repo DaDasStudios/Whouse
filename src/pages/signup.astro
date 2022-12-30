@@ -1,0 +1,44 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import SignUpForm from "../components/Auth/SignUpForm"
+---
+
+<MainLayout>
+    <div class="bg-white dark:bg-slate-900">
+		<section
+			class="max-w-screen-xl mx-auto py-36 px-10 flex items-center justify-between sm:gap-4 lg:gap-16"
+		>
+			<div 
+                class="mask-light max-lg:hidden mask w-1/2 rounded-full"
+                id="mask-bg"
+            >
+				<img
+                    class="rounded-full border border-transparent"
+					src="/jpg/person3.jpg"
+					alt="Persona sonriendo"
+				/>
+			</div>
+
+			<article class="flex-1">
+				<h1
+					class="text-slate-800 font-extrabold font-roboto text-3xl sm:text-5xl lg:text-5xl mb-7 tracking-tight text-center dark:text-white"
+				>
+					Regístrate
+				</h1>
+				<p
+					class="text-center text-muted dark:text-dark-muted lg:text-xl my-8"
+				>
+					Accede a un montón de beneficios por registrarte y manténte al tanto de nuestras últimas <b>noticias y ofertas.</b>
+				</p>
+				<SignUpForm client:only />
+			</article>
+		</section>
+    </div>
+</MainLayout>
+<script>
+	import setTheme from "../scripts/Theme";
+    const maskTag = document.getElementById("mask-bg") as HTMLElement
+    setTheme(maskTag, "mask-light", "mask-dark")
+
+</script>
+

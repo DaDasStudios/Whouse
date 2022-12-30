@@ -1,0 +1,43 @@
+---
+import DropDownElement from "./DropDownElement.astro";
+---
+
+<div
+	id="mega-menu-full-dropdown"
+	class="mt-1 border-t-gray-200 shadow-sm bg-gray-50 md:bg-white border-t dark:bg-dark-primary dark:border-gray-600/50 hidden"
+>
+	<div
+		id="mega-menu-trigger" 
+		class="grid max-w-screen-xl px-4 py-5 mx-auto text-gray-900 dark:text-white sm:grid-cols-2 md:px-6"
+	>
+		<ul>
+			<DropDownElement
+				href="/services#furniture"
+				title="Cuidado de muebles"
+				description="Dejamos relucientes los muebles de tu hogar, ya sea todo el conjunto de los muebles de tu sala o las sillas de tu comedor, incluso ambos a la vez."
+				img="/jpg/mueble1.jpg"
+			/>
+			<DropDownElement
+				href="/services#vehicule"
+				title="Tapicería de vehículo"
+				description="Si los interiores de tu vehículo están vueltos una nada, déjanos ocuparnos de ello haciéndoles una limpieza profunda a tu tapizeria con nuestras máquinas especializadas."
+				img="/jpg/interior-carro1.jpg"
+			/>
+		</ul>
+		<ul>
+			<DropDownElement
+				href="/services#sofabed"
+				title="Lavado de sofacamas"
+				description="Cuando ni tu te puedas recostar en tu sofacama, no dudes en llamarnos para aniquilar esa banda de gérmenes y acaros que hay en él, así podrás acostarte de nuevo sin remordimiento."
+				img="/jpg/sofacama.jpg"
+
+			/>
+			<DropDownElement
+				href="/services#specialized"
+				title="Servicios especiales"
+				description="En caso de que tu objeto por limpiar no esté en nuestra lista, contáctanos desde este apartado para hacernos cargo de ello."
+				img="/jpg/colchon1.jpg"
+			/>
+		</ul>
+	</div>
+</div>

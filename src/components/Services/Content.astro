@@ -1,0 +1,371 @@
+---
+import Badge from "./components/Badge.astro";
+import Paragraph from "./components/Paragraph.astro";
+import Heading from "./components/Heading";
+import List from "./components/List.astro";
+import Blockquote from "./components/Blockquote.astro";
+import ComparisionTable from "./components/ComparisionTable.astro";
+
+const primaryTheme =
+	"bg-sky-100 dark:bg-indigo-400/50 text-sky-700 dark:text-indigo-100 border-sky-200 dark:border-indigo-400";
+
+const dangerTheme =
+	"bg-red-100 dark:bg-rose-400/50 text-red-700 dark:text-rose-100 border-red-200 dark:border-rose-400";
+
+const warningTheme =
+	"bg-amber-100 dark:bg-yellow-400/50 text-amber-700 dark:text-yellow-100 border-amber-200 dark:border-yellow-400";
+
+const successTheme =
+	"bg-green-100 dark:bg-emerald-400/50 text-green-700 dark:text-emerald-100 border-green-200 dark:border-emerald-400";
+---
+
+<article
+	class="col-span-4 lg:col-span-3 mt-12 lg:mt-8 lg:mr-8 overflow-y-scroll pr-4 scroll max-h-screen"
+>
+	<Heading type={1}>Servicios</Heading>
+	<Paragraph>
+		Conoce la diversidad de servicios que ofrecemos incluyendo sus <b
+			>precios, ofertas, requerimientos, contenido y beneficios</b
+		>. Lee atentamente o contáctate con nosotros via
+		<Badge>
+			<a href="/">Whatsapp</a>
+		</Badge>
+		o la sección de
+		<Badge>
+			<a href="/contact">Contacto</a>
+		</Badge>
+	</Paragraph>
+	<br />
+	<Heading type={3}>Cuidado de muebles</Heading>
+	<span id="furniture"></span>
+	<Paragraph>
+		Este servicio consiste en remover toda la <b>suciedad y polvo</b> acumulado
+		en el tiempo de tus muebles. Es un proceso altamente recomendable, puesto
+		que la vida útil de tus muebles se ve extendida y el cambio es abismal.
+	</Paragraph>
+	<br />
+	<Heading type={6}>Requerimientos</Heading>
+	<Paragraph>
+		Para llevar a cabo la limpieza, es necesario que conozcas y cumplas los
+		requisitos en caso que tomes el servicio:
+	</Paragraph>
+	<List
+		elements={[
+			"Acceso a luz y agua",
+			"Tela no muy desquebrajada",
+			"La cuerina de mala calidad puede dañarse",
+		]}
+	/>
+	<Blockquote theme={warningTheme}>
+		<h6 class="flex gap-2 items-center mb-2 font-bold">
+			<svg
+				class="w-6 h-6"
+				fill="none"
+				stroke="currentColor"
+				viewBox="0 0 24 24"
+				xmlns="http://www.w3.org/2000/svg"
+				><path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
+				></path>
+			</svg>
+			PRECAUCIÓN
+		</h6>
+		<p>
+			Si consideras que tu tela está demasiado desgastada y podría dañarse
+			fácilmente con la fricción, te recomendamos tomar precauciones o
+			avisarnos de ello.
+		</p>
+	</Blockquote>
+	<br />
+	<Heading type={6}>Precios</Heading>
+	<Paragraph>
+		Los precios de la limpieza varían en función de cantidad de muebles,
+		suciedad y tiempo de trabajo. Sin embargo, puedes accerder a <Badge
+			><a href="/offers">Ofertas</a>
+		</Badge> y solicitar <Badge
+			><a href="/contact">Servicios personalizados</a>
+		</Badge> si así lo deseas.
+	</Paragraph>
+	<ComparisionTable
+		headers={[
+			{
+				header: "Beneficios",
+			},
+			{
+				header: "Simple",
+				price: 59000,
+			},
+			{
+				header: "Normal",
+				price: 89000,
+			},
+			{
+				header: "Completo",
+				price: 129000,
+			},
+		]}
+		features={[
+			{
+				featureName: "Limpieza profunda del sofá",
+				availabilty: [true, true, true],
+			},
+			{
+				featureName: "Secado profundo",
+				availabilty: [true, true, true],
+			},
+			{
+				featureName: "Lavado de sillas del comedor",
+				availabilty: [false, false, true],
+			},
+			{
+				featureName: "Sillones, cojines y tapetes",
+				availabilty: [false, false, true],
+			},
+			{
+				featureName: "Lavadura de todos los muebles de la sala",
+				availabilty: [false, true, true],
+			},
+			{
+				featureName: "Garantía por daños",
+				availabilty: [true, true, true],
+			},
+		]}
+	/>
+	<Blockquote theme={primaryTheme}>
+		<h6 class="flex gap-2 items-center mb-2 font-bold">
+			<svg
+				class="w-6 h-6"
+				fill="none"
+				stroke="currentColor"
+				viewBox="0 0 24 24"
+				xmlns="http://www.w3.org/2000/svg"
+				><path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"
+				></path>
+			</svg>
+			RECOMENDACIÓN
+		</h6>
+		<p>
+			Si tienes mascotas o vives con muchas personas, te sugerimos cubrir
+			tus muebles con forros o telas para evitar que recojan suciedad
+			nuevamente.
+		</p>
+	</Blockquote>
+	<br />
+	<Heading type={3}>Lavado de sofacamas</Heading>
+	<span id="sofabed"></span>
+	<Paragraph>
+		El servicio para el cuidado de los sofacamas entra en una categoría
+		distinta al de la limpieza de muebles, ya que consiste en una
+		restauración enfocada en la limpieza del mueble. Observa el contenido de
+		este servicio y sus beneficios.
+	</Paragraph>
+	<Blockquote theme={successTheme}>
+		<h6 class="flex gap-2 items-center mb-2 font-bold">
+			<svg
+				class="w-6 h-6"
+				fill="none"
+				stroke="currentColor"
+				viewBox="0 0 24 24"
+				xmlns="http://www.w3.org/2000/svg"
+				><path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+				></path>
+			</svg>
+			BENEFICIO
+		</h6>
+		<p>
+			Si requires de la limpieza de tus muebles y la de tus sofacamas,
+			obtendrás un 25% de descuento en los dos planes escogidos que
+			necesites para tu hogar.
+		</p>
+	</Blockquote>
+	<br />
+	<Heading type={6}>Precios</Heading>
+	<Paragraph>
+		Ten en cuenta que el precio por la restauración puede variar dependiendo
+		del trabajo necesario. Debido a que los sofacamas son usados para
+		dormir, acumulando cantidad de mugre superior al de los muebles.
+	</Paragraph>
+	<ComparisionTable
+		headers={[
+			{
+				header: "Beneficios",
+			},
+			{
+				header: "Solo",
+				price: 69000,
+			},
+			{
+				header: "Mixto (Recomendado)",
+				price: 119000,
+			},
+		]}
+		features={[
+			{
+				featureName: "Restauración del sofacama",
+				availabilty: [true, true],
+			},
+			{
+				featureName: "Secado profundo",
+				availabilty: [true, true],
+			},
+			{
+				featureName: "Lavado de los cojines",
+				availabilty: [false, true],
+			},
+			{
+				featureName: "Lavadura de otros muebles solicitados",
+				availabilty: [false, true],
+			},
+			{
+				featureName: "Garantía por daños",
+				availabilty: [true, true],
+			},
+		]}
+	/>
+	<br />
+	<Heading type={3}>Tapicería de vehículo</Heading>
+	<span id="vehicule"></span>
+	<Paragraph>
+		Los vehículos son lugares donde se aacumula demasiada suciedad y mugre.
+		Por ello, es <i>altamente recomendable</i> que consideres limpiar la tapicería
+		de tu vehículo al menos <b>anualmente</b>, para evitar la aparición de
+		criaturas poco bienvenidas allí.
+	</Paragraph>
+	<br />
+	<Heading type={6}>Requerimientos</Heading>
+	<Paragraph>
+		Para poder realizar el lavado de tu tapicería, necesitamos que dispongas
+		de los siguientes recursos:
+	</Paragraph>
+	<List
+		elements={[
+			"Espacio para posicionar las máquinas",
+			"Un plazo mínimo de tiempo de 4 horas",
+			"Aceso al agua y electricidad cerca de tu vehículo",
+		]}
+	/>
+	<Paragraph>
+		Esta limpieza consiste en una restauración, donde todo el mugre, grasa,
+		comida y suciedad acumulado en los muebles de tu vehículo serán
+		removidos
+	</Paragraph>
+	<Blockquote theme={warningTheme}>
+		<h6 class="flex gap-2 items-center mb-2 font-bold">
+			<svg
+				class="w-6 h-6"
+				fill="none"
+				stroke="currentColor"
+				viewBox="0 0 24 24"
+				xmlns="http://www.w3.org/2000/svg"
+				><path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
+				></path>
+			</svg>
+			CONSIDERACIÓN
+		</h6>
+		<p>
+			Ten en cuenta que el tamaño de tu vehículo influye altamente en la
+			cantidad de tiempo invertido, de manera que los costos pueden variar
+			bastante en cada caso.
+		</p>
+	</Blockquote>
+	<br />
+	<Heading type={6}>Precios</Heading>
+	<Paragraph>
+		De todas las catergorías, la limpieza de vehículos es la más ardua, lo
+		cual se ve reflejado en el cambio de los precios.
+	</Paragraph>
+	<ComparisionTable
+		headers={[
+			{
+				header: "Beneficios",
+			},
+			{
+				header: "Básico",
+				price: 89000,
+			},
+			{
+				header: "Exhausto",
+				price: 109000,
+			},
+			{
+				header: "Full (Recomendado)",
+				price: 119000,
+			},
+		]}
+		features={[
+			{
+				featureName: "Restauración de la tapicería",
+				availabilty: [true, true, true],
+			},
+			{
+				featureName: "Secado profundo",
+				availabilty: [true, true, true],
+			},
+			{
+				featureName: "Lavado del interior completo",
+				availabilty: [false, true, true],
+			},
+			{
+				featureName: "Cuidado del techo",
+				availabilty: [false, true, true],
+			},
+			{
+				featureName: "Lavado exterior del vehículo",
+				availabilty: [false, false, true],
+			},
+			{
+				featureName: "Limpieza profunda de los tapetes",
+				availabilty: [false, false, true],
+			},
+			{
+				featureName: "Garantía por daños",
+				availabilty: [true, true, true],
+			},
+		]}
+	/>
+	<br />
+	<Heading type={3}>Servicios especiales</Heading>
+	<span id="specialized"></span>
+	<Paragraph>
+		En caso de que requieras de un servicio relacionado con la limpieza que
+		no ofrecemos directamente, contáctanos via <Badge
+			><a href="/">Whatsapp</a>
+		</Badge> contándonos las características de tu situación. Posteriormente
+		te ofreceremos un serie de <b>planes, ofertas y beneficios</b> que podras
+		adquirir.
+	</Paragraph>
+	<Blockquote theme={primaryTheme}>
+		<h6 class="flex gap-2 items-center mb-2 font-bold">
+			<svg
+				class="w-6 h-6"
+				fill="none"
+				stroke="currentColor"
+				viewBox="0 0 24 24"
+				xmlns="http://www.w3.org/2000/svg"
+				><path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+				></path>
+			</svg>
+			CONTÁCTANOS
+		</h6>
+		<p>O bien, envíanos un correo con un descripción de tu situación</p>
+	</Blockquote>
+</article>

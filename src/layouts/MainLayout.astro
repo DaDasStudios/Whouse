@@ -1,0 +1,38 @@
+---
+import Header from "../components/Header/index.astro";
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer/index.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+import Whatsapp from "../components/Icons/Whatsapp.astro";
+
+interface Props {
+	classList?: string | string[] | object;
+}
+
+const { classList = "" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header title={SITE_TITLE} />
+		<main class="min-h-screen" class:list={classList}>
+			<slot />
+		</main>
+		<Footer />
+		<a target="_blank" href="/" class="animate-bounce rounded-full bg-white dark:bg-slate-800 shadow-md fixed z-10 bottom-4 right-4 p-3 group hover:scale-105 transition-transform ring-1 ring-slate-900/5 flex items-center justify-center flex-wrap text-green-400 hover:text-green-500">
+			<div class="max-w-0 group-hover:max-w-md flex-1 transition-all duration-1000 ease-in-out group-hover:pr-2">
+				<h5 class="text-sm  dark:text-slate-300 font-medium truncate">Comunícate con nosotros</h5>
+			</div>
+			<span
+				class="block w-6"
+			>
+				<Whatsapp />
+			</span>
+		</a>
+		<script is:inline src="/scripts/flowbite/dist/flowbite.js"></script>
+	</body>
+</html>

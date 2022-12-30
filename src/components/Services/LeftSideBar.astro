@@ -1,0 +1,58 @@
+---
+import LeftSideElement from "./LeftSideElement.astro";
+---
+
+<nav>
+	<ul class="text-sm leading-6">
+        <LeftSideElement header="Bienvenida" content={[
+            {
+                text: "Dando inicio",
+                href: "/#init"
+            },
+            {
+                text: "Nuestro objetivo",
+                href: "/#insight-objective"
+            },
+            {
+                text: "Acerca de",
+                href: "/#about-us"
+            }
+        ]}/>
+        <LeftSideElement header="Servicios" content={[
+            {
+                text: "Cuidado de muebles",
+                href: "/services#furniture"
+            },
+            {
+                text: "Lavado de sofacamas",
+                href: "/services#sofabed"
+            },
+            {
+                text: "Tapicería de vehículo",
+                href: "/services#vehicule"
+            },
+            {
+                text: "Servicios especiales",
+                href: "/services#specialized"
+            }
+        ]}/>
+        <LeftSideElement header="Contacto" content={[
+            {
+                text: "Tengo dudas",
+                href: "/contact"
+            },
+            {
+                text: "Sugerir servicios",
+                href: "/contact"
+            },
+            {
+                text: "Reclamos y quejas",
+                href: "/claims"
+            },
+            {
+                text: "Redes sociales",
+                href: "#social-media"
+            }
+        ]}/>
+	</ul>
+</nav>
