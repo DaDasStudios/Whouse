@@ -3,7 +3,7 @@ import Elements from "./Elements.astro";
 import MenuDropDown from "./MenuDropDown.astro";
 ---
 
-<header class="fixed left-0 top-0 right-0 z-30">
+<header>
 	<nav class="bg-white border shadow-sm border-gray-200 dark:border-gray-600/50 dark:bg-dark-primary">
 		<div
 			class="flex flex-wrap justify-items-center justify-between min-[768px]:justify-center min-[1076px]:justify-between items-center mx-auto max-w-screen-xl px-4 md:px-6 py-2.5"
@@ -18,7 +18,7 @@ import MenuDropDown from "./MenuDropDown.astro";
 				</div>
 			</a>
 			<button
-				data-collapse-toggle="mega-menu-full"
+				id="mega-menu-trigger"
 				type="button"
 				class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
 				aria-controls="mega-menu-full"

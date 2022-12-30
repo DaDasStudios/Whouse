@@ -16,10 +16,11 @@ const { classList = "" } = Astro.props;
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<script is:inline src="/scripts/flowbite/dist/flowbite.js"></script>
 	</head>
 	<body>
 		<Header title={SITE_TITLE} />
-		<main class="min-h-screen" class:list={classList}>
+		<main class:list={classList}>
 			<slot />
 		</main>
 		<Footer />
@@ -33,6 +34,5 @@ const { classList = "" } = Astro.props;
 				<Whatsapp />
 			</span>
 		</a>
-		<script is:inline src="/scripts/flowbite/dist/flowbite.js"></script>
 	</body>
 </html>
