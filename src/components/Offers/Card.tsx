@@ -1,3 +1,5 @@
+import { useId } from 'react'
+
 interface Props {
     icon: React.ReactElement,
     offertName: string,
@@ -10,6 +12,7 @@ interface Props {
 
 export default function Card(props: Props) {
     const { icon, offertName, discount, description, content, warning, btnUrl } = props
+    const uuId = useId()
     return (
         <li className="bg-white overflow-hidden dark:bg-dark-secondary rounded-lg shadow-md hover:scale-105 transition-transform">
             <div className="bg-sky-50 dark:bg-dark-terciary flex flex-col items-center justify-center p-4 border-b border-sky-900/30 dark:border-slate-200/50 gap-2 text-2xl font-semibold tracking-tight text-sky-700 dark:text-slate-300">
@@ -21,7 +24,7 @@ export default function Card(props: Props) {
                 <h2 className="uppercase font-bold my-8 text-sky-800/90 dark:text-slate-300 text-4xl">{discount}% de descuento</h2>
                 <ul>
                     {content.map(e => (
-                        <li className="mb-1 text-slate-700 dark:text-slate-300">{e}</li>
+                        <li key={uuId + e[0]} className="mb-1 text-slate-700 dark:text-slate-300">{e}</li>
                     ))}
                 </ul>
                 <p className="text-sky-800 dark:text-slate-200 flex gap-2 items-center justify-center my-6 font-medium">
