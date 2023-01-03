@@ -1,3 +1,34 @@
+/* FONT FACE */
+
+@font-face {
+	font-family: Inter;
+	src: url("/fonts/Inter/Inter-VariableFont_slnt,wght.ttf");
+}
+
+@font-face {
+	font-family: Comfortaa;
+	src: url("/fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf");
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+  @apply w-2 h-2;
+}
+
+::-webkit-scrollbar-track {	
+  @apply rounded-md bg-sky-100 dark:bg-slate-700;
+}
+
+::-webkit-scrollbar-thumb {
+@apply rounded-md bg-sky-200 dark:bg-slate-600;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-sky-200/50 dark:bg-slate-500;
+}
+
+/* GENERAL */
 
 em {
 	font-style: normal;
@@ -12,25 +43,12 @@ html {
 	width: 100vw;
 }
 
-/* width */
-::-webkit-scrollbar {
-  @apply w-2 h-2;
+/* CUSTOM CLASSES */
+
+.logo {
+	background-image: url("/png/Logo_and_title.png");
 }
 
-/* Track */
-::-webkit-scrollbar-track {	
-  @apply rounded-md bg-sky-100 dark:bg-slate-700;
-}
-
-/* Handle */												
-::-webkit-scrollbar-thumb {
-@apply rounded-md bg-sky-200 dark:bg-slate-600;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  @apply bg-sky-200/50 dark:bg-slate-500;
-}
 .mask {
 	position: relative;
 }
@@ -61,6 +79,8 @@ html {
 		rgb(15, 23, 42, 1) 63%
 	);
 }
+
+/* BACKGROUND GRADIENTS */ 
 
 .global-bg-dark {
 	background: rgb(33, 63, 106);
@@ -109,9 +129,21 @@ html {
 	);
 }
 
-.logo {
-	background-image: url("/png/Logo_and_title.png");
+.testimonials-gradient {
+	background: white;
+	background: linear-gradient(0deg, #fff 0%, rgba(67, 145, 250, 0) 100%);
 }
+
+.testimonials-gradient-dark {
+	background: rgb(17, 24, 39);
+	background: linear-gradient(
+		0deg,
+		rgba(17, 24, 39, 1) 0%,
+		rgba(255, 255, 255, 0) 100%
+	);
+}
+
+/* ANIMATIONS */
 
 .blink {
 	position: relative;
@@ -128,67 +160,9 @@ html {
 	animation: blink 0.5s infinite alternate step-end;
 }
 
-.testimonials-gradient {
-	background: white;
-	background: linear-gradient(0deg, #fff 0%, rgba(67, 145, 250, 0) 100%);
-}
-
-.testimonials-gradient-dark {
-	background: rgb(17, 24, 39);
-	background: linear-gradient(
-		0deg,
-		rgba(17, 24, 39, 1) 0%,
-		rgba(255, 255, 255, 0) 100%
-	);
-}
 
 @keyframes blink {
 	50% {
 		background-color: transparent;
 	}
 }
-
-@font-face {
-	font-family: Inter;
-	src: url("/fonts/Inter/Inter-VariableFont_slnt,wght.ttf");
-}
-
-@font-face {
-	font-family: Comfortaa;
-	src: url("/fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf");
-}
-
-/* 
-	One side gradient light:
-	background: -moz-linear-gradient(
-		30deg,
-		rgba(125, 185, 232, 0) 50%,
-		rgba(125, 185, 232, 0.18) 66%,
-		#4391fa91 100%
-	); 
-	background: -webkit-linear-gradient(
-		30deg,
-		rgba(125, 185, 232, 0) 50%,
-		rgba(125, 185, 232, 0.18) 66%,
-		rgba(67, 145, 250, 0.57) 100%
-	); /
-	background: linear-gradient(
-		30deg,
-		rgba(125, 185, 232, 0) 50%,
-		rgba(125, 185, 232, 0.18) 66%,
-		rgba(67, 145, 250, 0.57) 100%
-	); /
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#007db9e8', endColorstr='#914391fa',GradientType=1 ); 
-	
-	One side gradient dark:
-	background: rgb(17, 24, 39);
-	background: linear-gradient(
-		30deg,
-		rgba(17, 24, 39, 1) 60%,
-		rgba(20, 33, 54, 1) 74%,
-		rgba(25, 44, 73, 1) 88%,
-		rgba(33, 63, 106, 1) 100%
-	);
-
-
-*/
