@@ -11,6 +11,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@apollo/client": "^3.7.3",
     "@astrojs/mdx": "^0.12.2",
     "@astrojs/react": "^1.2.2",
     "@astrojs/rss": "^1.2.1",
@@ -21,8 +22,27 @@
     "astro": "^1.6.15",
     "flowbite": "^1.5.5",
     "formik": "^2.2.9",
+    "graphql": "^16.6.0",
+    "graphql-request": "^5.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "tailwindcss": "^3.2.4"
+    "tailwindcss": "^3.2.4",
+    "toastify-js": "^1.12.0"
+  },
+  "description": "``` npm create astro@latest -- --template blog ```",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaDasStudios/Whouse.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DaDasStudios/Whouse/issues"
+  },
+  "homepage": "https://github.com/DaDasStudios/Whouse#readme",
+  "devDependencies": {
+    "@types/toastify-js": "^1.11.1"
   }
 }

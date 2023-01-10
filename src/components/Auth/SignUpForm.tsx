@@ -1,34 +1,41 @@
+import { useEffect } from 'react'
 import { Formik, Form, Field } from 'formik';
 import Input from '../ui/Input';
 import { emailReg } from '../../util/regExp'
-import { submitSignUpData } from '../../api/auth';
+import { signUp } from '../../api/auth';
+import Toastify from 'toastify-js'
+import { dangerToast, successToast, warningToast } from '../../util/toastClasses';
 
 export interface ISignUpFields {
     username: string
-    realName: string
     email: string
     password: string
     confirmPassword: string
+    imageUrl: string
+    occupation: string
 }
 
 const SignUpForm = () => {
+    useEffect(() => {
+        if (localStorage.getItem('x-access-token')) window.location.assign("/profile")
+    })
     return (
         <div className='sm:px-16 md:px-24 lg:px-0'>
             <Formik
                 initialValues={
                     {
                         username: '',
-                        realName: '',
                         email: '',
                         password: '',
                         confirmPassword: '',
+                        imageUrl: '',
+                        occupation: ''
                     }
                 }
 
                 validate={values => {
                     const errors = {} as ISignUpFields
                     if (!values.username) errors.username = "El apodo es requerido"
-                    if (!values.realName) errors.realName = "El nombre completo es requerido"
                     if (!values.email) errors.email = "La correo electrónico es requerido"
                     if (!values.password) errors.password = "Necesitas una contraseña"
                     if (!values.confirmPassword) errors.confirmPassword = "Necesitas confirmar la contraseña"
@@ -38,8 +45,34 @@ const SignUpForm = () => {
                     return errors;
                 }}
                 onSubmit={async (values, { setSubmitting }) => {
-                    submitSignUpData(values)
-                    setSubmitting(false)
+                    try {
+                        const res = await signUp(values) as { signUp: string }
+                        if (res.signUp) setSubmitting(false)
+                        localStorage.setItem("x-access-token", res.signUp)
+                        Toastify({
+                            text: "✅ Has sido registrado satisfactoriamente",
+                            stopOnFocus: true,
+                            duration: 5000,
+                            gravity: "bottom",
+                            className: successToast
+                        }).showToast()
+                    } catch (error: any) {
+                        localStorage.removeItem("x-access-token")
+                        Toastify({
+                            text: "⛔ Ups... Algo está mal con la información proporcionada",
+                            stopOnFocus: true,
+                            duration: 5000,
+                            gravity: "bottom",
+                            className: dangerToast
+                        }).showToast()
+                        Toastify({
+                            text: "⚠️ Es posible que ya estés registrado, intenta con otro email",
+                            stopOnFocus: true,
+                            duration: 5000,
+                            gravity: "bottom",
+                            className: warningToast
+                        }).showToast()
+                    }
                 }}
             >
                 {({
@@ -48,36 +81,48 @@ const SignUpForm = () => {
                     <Form>
                         <Field
                             type="text"
-                            name="realName"
+                            name="username"
                             placeholder="Nombre completo"
                             component={Input}
-                        />
-
-                        <Field
-                            type="text"
-                            name="username"
-                            placeholder="Apodo"
-                            component={Input}
+                            required={true}
                         />
                         <Field
                             type="email"
                             name="email"
                             placeholder="Email"
                             component={Input}
+                            required={true}
                         />
                         <Field
                             type="password"
                             name="password"
                             placeholder="Contraseña"
                             component={Input}
+                            required={true}
                         />
                         <Field
                             type="password"
                             name="confirmPassword"
                             placeholder="Confirmar contraseña"
                             component={Input}
+                            required={true}
                         />
 
+                        <Field
+                            type="text"
+                            name="occupation"
+                            placeholder="Ocupación"
+                            component={Input}
+                            required={true}
+                        />
+
+                        <Field
+                            type="text"
+                            name="imageUrl"
+                            placeholder="URL de foto de perfil (opcional)"
+                            component={Input}
+                            required={false}
+                        />
                         <div className='flex items-center justify-center'>
                             <button
                                 disabled={Object.values(errors).some(v => v)}

@@ -1,15 +1,12 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
-import Testimonials from "../components/Testimonials/index";
-import Otter from "../components/Home/Otter";
+import MainLayout from "../layouts/MainLayout.astro"
+import Testimonials from "../components/Testimonials/index"
+import Otter from "../components/Home/Otter"
 ---
 
 <MainLayout>
 	<div id="main-bg" class="global-bg">
-		<section
-			id="init"
-			class="max-w-screen-xl mx-auto py-36 px-4"
-		>
+		<section id="init" class="max-w-screen-xl mx-auto py-36 px-4">
 			<h1
 				class="text-slate-800 font-extrabold font-roboto text-3xl sm:text-5xl lg:text-6xl tracking-tight text-center dark:text-white blink antialiased"
 				id="type-trigger"
@@ -52,7 +49,7 @@ import Otter from "../components/Home/Otter";
 						class="p-4 md:p-8 font-medium text-base sm:text-lg"
 					>
 						<blockquote
-							class="text-slate-900 dark:text-gray-300 mb-4 q"
+							class="text-slate-900 dark:text-gray-300 mb-4"
 						>
 							"Cuando invito de fiesta a mis amigos, ya no les
 							incomoda sentarse en mis muebles."
@@ -283,23 +280,23 @@ import Otter from "../components/Home/Otter";
 </MainLayout>
 
 <script>
-	import { TypeAnimation } from "../scripts/Animations";
+	import { TypeAnimation } from "../scripts/Animations"
 
-	const titleTrigger = document.getElementById("type-trigger") as HTMLElement;
+	const titleTrigger = document.getElementById("type-trigger") as HTMLElement
 	const titleAnimated = new TypeAnimation(
 		titleTrigger,
 		"domicilio de forma totalmente profesional"
-	);
+	)
 	titleAnimated.start({ mode: "type" })?.then(() => {
 		setTimeout(() => {
-			titleAnimated.charsToRemove = 22;
+			titleAnimated.charsToRemove = 22
 			titleAnimated.start({ mode: "remove" })?.then(() => {
-				titleAnimated.setText(" totalmente");
+				titleAnimated.setText(" totalmente")
 				setTimeout(() => {
 					titleAnimated.start({ mode: "type" })?.then(() => {
-						titleAnimated.setText(" profesional");
+						titleAnimated.setText(" profesional")
 						titleAnimated.start({ mode: "type" })?.then(() => {
-							titleAnimated.charsToRemove = 45;
+							titleAnimated.charsToRemove = 45
 							setTimeout(() => {
 								titleAnimated
 									.start({
@@ -308,37 +305,37 @@ import Otter from "../components/Home/Otter";
 									?.then(() => {
 										titleAnimated.setText(
 											" domicilio de forma totalmente profesional"
-										);
+										)
 										titleAnimated
 											.start({ mode: "type" })
 											?.then(() => {
-												titleTrigger.textContent += ".";
-											});
-									});
-							}, 2000);
-						});
-					});
-				}, 1500);
-			});
-		}, 3000);
-	});
+												titleTrigger.textContent += "."
+											})
+									})
+							}, 2000)
+						})
+					})
+				}, 1500)
+			})
+		}, 3000)
+	})
 </script>
 <script>
-	import { TypeAnimation } from "../scripts/Animations";
+	import { TypeAnimation } from "../scripts/Animations"
 	const textTrigger = document.getElementById(
 		"insight-objective-text"
-	) as HTMLElement;
+	) as HTMLElement
 	let text =
-		'Nuestra visión y objetivo principal es hacer una revolución en la forma en cómo se limpian los muebles en el país, ya que venimos acostumbrados a la limpieza "artesanal", que ciertamente no es la mejor opción. Por ello, decidimos innovar para ser los primeros en ofrecer estos servicios en nuestro país. Queremos que nuestros clientes salgan completamente satisfechos y no duden en volver a llamarnos; es por eso que nos enfocamos tanto en la calidad y servicio.';
-	const textAnimated = new TypeAnimation(textTrigger, text);
-	textAnimated.start({ mode: "type", speed: 50 });
+		'Nuestra visión y objetivo principal es hacer una revolución en la forma en cómo se limpian los muebles en el país, ya que venimos acostumbrados a la limpieza "artesanal", que ciertamente no es la mejor opción. Por ello, decidimos innovar para ser los primeros en ofrecer estos servicios en nuestro país. Queremos que nuestros clientes salgan completamente satisfechos y no duden en volver a llamarnos; es por eso que nos enfocamos tanto en la calidad y servicio.'
+	const textAnimated = new TypeAnimation(textTrigger, text)
+	textAnimated.start({ mode: "type", speed: 50 })
 </script>
 <script>
-	import setTheme from "../scripts/Theme";
-	const mainTag = document.getElementById("main-bg") as HTMLElement;
+	import setTheme from "../scripts/Theme"
+	const mainTag = document.getElementById("main-bg") as HTMLElement
 	const insightAndObjective = document.getElementById(
 		"insight-objective"
-	) as HTMLElement;
-	setTheme(mainTag, "global-bg", "global-bg-dark");
-	setTheme(insightAndObjective, "insight-bg", "insight-bg-dark");
+	) as HTMLElement
+	setTheme(mainTag, "global-bg", "global-bg-dark")
+	setTheme(insightAndObjective, "insight-bg", "insight-bg-dark")
 </script>

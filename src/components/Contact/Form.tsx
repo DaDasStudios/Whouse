@@ -2,7 +2,10 @@ import { Formik, Form, Field } from 'formik';
 import Input from '../ui/Input';
 import Textarea from '../ui/Textarea';
 import { emailReg } from '../../util/regExp'
-import { submitContactData } from '../../api/contact';
+import { submitContact } from '../../api/contact';
+import type { IContact } from '../../interfaces/Contact';
+import Toastify from 'toastify-js'
+import { dangerToast, successToast, warningToast } from '../../util/toastClasses';
 
 export interface IContactFields {
     firstNames: string
@@ -41,9 +44,40 @@ const ContactForm = () => (
 
                 return errors;
             }}
-            onSubmit={async (values, { setSubmitting }) => {
-                const res = await submitContactData(values)
-                setSubmitting(false)
+            onSubmit={async (values, { setSubmitting, resetForm }) => {
+                try {
+                    const res = await submitContact(values) as {
+                        submitContact: {
+                            data: IContact
+                            success: boolean
+                        }
+                    }
+                    if (res.submitContact.success) {
+                        Toastify({
+                            text: `✅ En unas cuantas horas atenderemos tu inquietud`,
+                            duration: 5000,
+                            gravity: "bottom",
+                            className: successToast,
+                            stopOnFocus: true
+                        }).showToast()
+                        Toastify({
+                            text: `⚠️ Puedes contactarnos también vía Whatsapp`,
+                            duration: 5000,
+                            gravity: "bottom",
+                            className: warningToast,
+                            stopOnFocus: true
+                        }).showToast()
+                        resetForm()
+                    }
+                } catch (err) {
+                    Toastify({
+                        text: `⛔ Ups... Algo salió mal, intenta de nuevo`,
+                        duration: 5000,
+                        gravity: "bottom",
+                        className: dangerToast,
+                        stopOnFocus: true
+                    }).showToast()
+                } finally { setSubmitting(false) }
             }}
         >
             {({

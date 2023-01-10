@@ -1,5 +1,5 @@
 ---
-import Elements from "./Elements.astro";
+import Elements from "./Elements";
 import MenuDropDown from "./MenuDropDown.astro";
 ---
 
@@ -41,7 +41,7 @@ import MenuDropDown from "./MenuDropDown.astro";
 				id="mega-menu-full"
 				class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
 			>
-                <Elements/>
+                <Elements client:only/>
 			</div>
 		</div>
         <MenuDropDown />

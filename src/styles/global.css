@@ -160,9 +160,9 @@ html {
 	animation: blink 0.5s infinite alternate step-end;
 }
 
-
 @keyframes blink {
 	50% {
 		background-color: transparent;
 	}
 }
+

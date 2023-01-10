@@ -1,0 +1,19 @@
+---
+import MainLayout from "../layouts/MainLayout.astro"
+import Profile from "../components/Profile/Profile"
+---
+
+<MainLayout>
+	<div id="main-bg" class="global-bg py-36 min-h-screen">
+		<section id="init" class=" bg-white dark:bg-dark-secondary ring-1 ring-slate-900/5 dark:ring-slate-200/10 rounded-md shadow-md max-w-screen-md mx-4 md:mx-auto p-8">
+            <Profile client:only/>
+        </section>
+    </div>
+</MainLayout>
+
+<script>
+	import setTheme from "../scripts/Theme"
+	const mainTag = document.getElementById("main-bg") as HTMLElement
+	setTheme(mainTag, "global-bg", "global-bg-dark")
+</script>
+

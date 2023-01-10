@@ -1,7 +1,10 @@
 import { Formik, Form, Field } from 'formik';
+import { useEffect } from 'react';
 import Input from '../ui/Input';
 import { emailReg } from '../../util/regExp'
-import { submitSignInData } from '../../api/auth';
+import { signIn } from '../../api/auth';
+import Toastify from 'toastify-js'
+import { dangerToast } from '../../util/toastClasses';
 
 export interface ISignInFields {
     email: string
@@ -9,6 +12,9 @@ export interface ISignInFields {
 }
 
 const SignInForm = () => {
+    useEffect(() => {
+        if (localStorage.getItem('x-access-token')) window.location.assign("/profile")
+    })
     return (
         <div className='sm:px-16 md:px-24 lg:px-0'>
             <Formik
@@ -28,8 +34,20 @@ const SignInForm = () => {
                     return errors;
                 }}
                 onSubmit={async (values, { setSubmitting }) => {
-                    submitSignInData(values)
-                    setSubmitting(false)
+                    try {
+                        const res = await signIn(values) as { signIn: string }
+                        localStorage.setItem("x-access-token", res.signIn)
+                        window.location.assign("/profile")
+                    } catch (error) {
+                        localStorage.removeItem("x-access-token")
+                        Toastify({
+                            text: "⛔ Ups... Algo está mal con la información proporcionada",
+                            stopOnFocus: true,
+                            duration: 5000,
+                            gravity: "bottom",
+                            className: dangerToast
+                        }).showToast()
+                    }
                 }}
             >
                 {({

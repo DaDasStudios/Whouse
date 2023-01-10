@@ -1,9 +1,11 @@
-export interface ITestimonialUser {
-    id: { $oid: string }
-    fullName: string,
-    occupation: string
-    email: string
-    gender: "Male" | "Female"
-    image: string
-    opinion: string
+export interface IUser {
+    _id: string,
+    username: string,
+    email: string,
+    password: string,
+    imageUrl: string,
+    occupation: string,
+    roles: string[],
+    createdAt: Date,
+    updatedAt: Date,
 }

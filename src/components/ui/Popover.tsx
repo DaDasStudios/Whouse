@@ -12,7 +12,7 @@ function Popover({ content, show, children, className }: PopoverProps) {
     if (children) return (<div className={`${showClass}`}>{children}</div>)
     return (
         <div
-            className={`absolute z-10 min-w-max text-sm bg-slate-800 dark:bg-gray-700 p-3 font-medium rounded-md text-white ${className} 
+            className={`absolute z-20 min-w-max text-sm bg-slate-800 dark:bg-gray-700 p-3 font-medium rounded-md text-white ${className} 
             ${showClass}`}
         >
             {content}
