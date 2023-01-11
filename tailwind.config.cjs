@@ -8,7 +8,7 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				'sans': ["inter", ...defaultTheme.fontFamily.sans],
+				'sans': ["Inter", ...defaultTheme.fontFamily.sans],
 				comfortaa: ['Comfortaa', 'sans-serif'],
 				inter: ['Inter', 'sans-serif'],
 				roboto: ['Roboto', 'sans-serif']

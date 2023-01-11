@@ -1,0 +1,67 @@
+---
+import MainLayout from "../layouts/MainLayout.astro"
+---
+
+<MainLayout>
+	<div
+		id="main-bg"
+		class="global-bg min-h-screen flex items-center justify-center"
+	>
+		<div>
+			<section
+				id="init"
+				class="bg-trasnparent max-w-screen-lg mx-4 md:mx-auto p-8"
+			>
+				<h1
+					class="text-slate-800 font-extrabold text-3xl sm:text-5xl lg:text-6xl tracking-tight text-center dark:text-white antialiased font-roboto"
+				>
+					Licencias
+				</h1>
+				<p
+					class="text-center text-muted dark:text-dark-muted lg:text-xl my-8"
+				>
+					Nuestras imágenes y videos cuentan con <em class="italic"
+						>licencia estándar</em
+					> la cual permite su uso de manera comercial. Adicionalmente,
+					el uso de multimedia gratuita con licencia libre para los rostros
+					está permitido. A continuación, se presentan los autores de los
+					retratos aparecidos dentro del sitio:
+				</p>
+				<ul
+					class="text-center text-slate-900 dark:text-slate-300 font-medium text-base flex flex-col gap-4"
+				>
+					<li>
+						<a
+							href="https://www.pexels.com/es-es/@mwabonje/"
+							class="hover:underline">Mwabonje</a
+						>
+					</li>
+					<li>
+						<a
+							href="https://www.pexels.com/es-es/@rodrigo-souza-1275988/"
+							class="hover:underline">Rodrigo Souza</a
+						>
+					</li>
+					<li>
+						<a
+							href="https://www.pexels.com/es-es/@2192742/"
+							class="hover:underline">Татьяна Танатова</a
+						>
+					</li>
+					<li>
+						<a
+							href="https://www.pexels.com/es-es/@hasibullah-zhowandai-248954/"
+							class="hover:underline">Hasibullah Zhowandai</a
+						>
+					</li>
+				</ul>
+			</section>
+		</div>
+	</div>
+</MainLayout>
+
+<script>
+	import setTheme from "../scripts/Theme"
+	const mainTag = document.getElementById("main-bg") as HTMLElement
+	setTheme(mainTag, "global-bg", "global-bg-dark")
+</script>

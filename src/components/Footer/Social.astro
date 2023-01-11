@@ -1,7 +1,6 @@
 ---
 import Facebook from "../Icons/Facebook.astro";
 import Instragram from "../Icons/Instragram.astro";
-import Twitter from "../Icons/Twitter.astro";
 import { SITE_TITLE } from '../../config'
 const today = new Date();
 ---
@@ -15,25 +14,20 @@ const today = new Date();
 	</span>
 	<div class="flex mt-4 space-x-6 sm:justify-center md:mt-0">
 		<a
-			href="#"
+			href="https://www.facebook.com/profile.php?id=100089343072563"
+			target="_blank"
 			class="text-gray-400 hover:text-gray-900 dark:hover:text-white"
 		>
             <Facebook/>
 			<span class="sr-only">Facebook page</span>
 		</a>
 		<a
-			href="#"
+			href="https://www.instagram.com/whousecolombia/"
+			target="_blank"
 			class="text-gray-400 hover:text-gray-900 dark:hover:text-white"
 		>
             <Instragram/>
 			<span class="sr-only">Instagram page</span>
-		</a>
-		<a
-			href="#"
-			class="text-gray-400 hover:text-gray-900 dark:hover:text-white"
-		>
-            <Twitter/>
-			<span class="sr-only">Twitter page</span>
 		</a>
 	</div>
 </div>

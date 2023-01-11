@@ -1,0 +1,74 @@
+---
+import MainLayout from "../layouts/MainLayout.astro"
+---
+
+<MainLayout>
+	<div
+		id="main-bg"
+		class="global-bg min-h-screen flex items-center justify-center"
+	>
+		<div>
+			<section
+				id="init"
+				class="bg-trasnparent max-w-screen-lg mx-4 md:mx-auto p-8"
+			>
+				<h1
+					class="text-slate-800 font-extrabold text-3xl sm:text-5xl lg:text-6xl tracking-tight text-center dark:text-white antialiased font-roboto"
+				>
+					Términos y condiciones
+				</h1>
+				<ul
+					class="text-center text-muted dark:text-dark-muted lg:text-xl my-8 flex flex-col gap-4"
+				>
+					<li>
+						<p>
+							Al utilizar cualesquiera de los servicios de Whouse,
+							estás aceptando nuestra política de términos y
+							condiciones. Dentro de estos servicios también está
+							incluído cualquier tipo de uso de nuestra página
+							web, redes sociales, o medios de contacto.
+						</p>
+					</li>
+					<li>
+						<p>
+							Cualquier tipo de contenido multimedia de índole
+							obsceno será sancionado con la eliminación de la
+							cuenta y las respectivas medidas legales.
+						</p>
+					</li>
+					<li>
+						<p>
+							Las sección de testimonios es revisada constatemente
+							por administradores, de manera que los comentarios poco
+							apropiados, malas palabras, contenido ilegal o
+							información personal serán eliminados.
+						</p>
+					</li>
+					<li>
+						<p>
+							La información personal de la cuenta no puede
+							contener imágenes o nombres obscenos, groseros o
+							poco apropiados para todo público. Las cuentas que
+							incumplan esta política serán sancionadas y vetadas
+							de la plataforma.
+						</p>
+					</li>
+					<li>
+						<p>
+							En las ofertas especiales, la suplantación de
+							identidad será motivo de sanción de la cuenta y
+							pérdida de beneficios por el tiempo establecido por
+							los administradores.
+						</p>
+					</li>
+				</ul>
+			</section>
+		</div>
+	</div>
+</MainLayout>
+
+<script>
+	import setTheme from "../scripts/Theme"
+	const mainTag = document.getElementById("main-bg") as HTMLElement
+	setTheme(mainTag, "global-bg", "global-bg-dark")
+</script>

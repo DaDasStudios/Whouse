@@ -18,7 +18,7 @@ const Testimonials = () => {
     }, [])
 
     return (
-        <section className={`p-0.5 grid max-xl:mx-5 max-md:grid-cols-1 grid-cols-3 gap-6 mt-36 relative overflow-hidden ${displayed ? "max-h-full" : "max-h-[400px]"}`}>
+        <section className={`p-0.5 grid max-xl:mx-5 max-md:grid-cols-1 grid-cols-3 gap-6 mt-36 relative overflow-hidden ${displayed ? "max-h-full" : "max-h-[1200px]"}`}>
             {rates.map(rate => (
                 <Testimonial key={rate._id} rate={rate} />
             ))}

@@ -17,7 +17,7 @@ const Rate = ({ canRate }: IProps) => {
     return (
         <div>
             <h3 className='text-base font-semibold text-gray-600 dark:text-gray-300 max-md:mb-4'>Cuéntanos tu experiencia con nosotros</h3>
-            <p className='my-3 text-muted dark:text-dark-muted'>Tu testimonio aparecerá en la página principal, necesitas tener todos los datos de tu cuenta llenos para realizar esta acción. Si ya has creado uno, se actualizará.</p>
+            <p className='my-3 text-muted dark:text-dark-muted'>Tu testimonio aparecerá en la página principal, necesitas tener todos los datos de tu cuenta para realizar esta acción. Si ya has creado uno, se actualizará.</p>
             <Formik<IFormRate>
                 initialValues={{
                     testimonial: '',
