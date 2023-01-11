@@ -1,0 +1,7 @@
+User-agent: *
+
+Disallow: /profile/
+Crawl-delay: 5
+Disallow: /cgi-bin/
+
+Sitemap: https://whouse.vercel.app
